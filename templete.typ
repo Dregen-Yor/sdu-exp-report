@@ -27,7 +27,7 @@
 )
 
 #let report(
-  institute: "计算机科学与技术学院",
+  institute: "计算机科学与技术",
   course: "人工智能引论",
   student-id: "202322460126",
   student-name: "李明",
@@ -92,7 +92,7 @@
             radius: 4pt,
             // width: 100%,
             context {
-                  it.lang
+              it.lang
             }
           )
         ]
@@ -131,8 +131,10 @@
       set text(size: 字号.小二, weight: "bold")
       it
     }
-    #set text(tracking: 2em)
-    #heading(numbering: none, depth: 1)[实验报告]
+    #set text(tracking: 0.1em)
+    #heading(numbering: none, depth: 1)[山东大学 #underline(extent:2pt,[#institute] ) 学院
+    
+    #underline(extent:2pt,[#course] ) 课程实验报告]
   ]
 
   show heading: set block(spacing: 1.5em)
