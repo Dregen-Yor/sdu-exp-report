@@ -4,7 +4,7 @@
 
 **本仓库非官方，使用者需自行承担使用风险。**
 
-![preview](/example/figures/image.png)
+![preview](/example/figures/main.png)
 
 ## 参考项目
 
