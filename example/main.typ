@@ -1,4 +1,5 @@
-#import "../templete.typ" : *
+#import "@preview/sdu-exp-report:0.1.0" : *
+// #import "../templete.typ":*
 
 #show: report.with(
   institute: "计算机科学与技术",
@@ -6,10 +7,11 @@
   student-id: "202322114514",
   student-name: "张三",
   date: datetime.today(),
-  lab-title: "实验0华为开发者空间-云主机初体验"
+  lab-title: "实验0华为开发者空间-云主机初体验",
+  exp-time: "2"
 )
 
-#show figure.where(kind: image): it => {
+#show figure.where(kind: "image"): it => {
   set image(width: 67%)
   it
 }
