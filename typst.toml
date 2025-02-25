@@ -1,7 +1,7 @@
 [package]
 name = "sdu-report-cs"
 version = "0.1.0"
-entrypoint = "lib.typ"
+entrypoint = "templete.typ"
 authors = ["Dregen_Yor"]
 license = "GPL-3.0"
 description = "A report template for SDU CS students"

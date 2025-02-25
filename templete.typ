@@ -29,10 +29,12 @@
 #let report(
   institute: "计算机科学与技术",
   course: "人工智能引论",
-  student-id: "202322460126",
+  student-id: "你的学号",
   student-name: "李明",
   date: datetime.today(),
   lab-title: "实验题目",
+  class: "你的班级",
+  exp-time: "实验时间",
   body
 ) = {
 
@@ -188,28 +190,52 @@
 
   [
     #set par(justify: true)
-    #set text(size: 字号.五号)
+    #set text(size: 字号.小四)
     #table(
-      align: center + horizon,
+      align: left + horizon,
       inset: 0.5em,
-      columns: (1.2fr, 1.9fr, 1.2fr, 1.5fr, 1.2fr, 1.7fr),
-      [学号], table.cell(colspan: 1,student-id), [姓名], student-name, [日期], date.display(),
+      columns: (3.1fr, 2.7fr, 2.9fr),
+      [学号： #student-id], [姓名：  #student-name], [班级：#class]
     )
     #v(0em, weak: true)
     #table(
       inset: 0.5em,
-      align: center + horizon,
-      columns: (1fr, 3fr),
-      [实验题目], lab-title,
+      align: left + horizon,
+      columns: (4fr),
+      [实验题目：#lab-title],
+    )
+    #v(0em, weak: true)
+    #table(
+      inset: 0.5em,
+      align: left + horizon,
+      columns: (2fr,2fr),
+      [实验学时：#exp-time], [实验日期：#date.display()],
     )
   ]
   v(0em, weak: true)
-  block(
-    // align: left + top,
-    width: 100%,
-    inset: 1em,
-    stroke: 1pt,
-    breakable: true,
-    body + v(1fr)
-  )
+  show heading.where(depth: 1): it => {
+    show h.where(amount: 0.3em): none
+    set text(size: 字号.小四)
+    [
+      #block(
+        width: 100%,
+        inset: 0em,
+        stroke: none,
+        breakable: true,
+        it
+      )
+    ]
+  }
+  body
+  
+}
+#let exp-block(content) ={
+v(0em, weak: true)
+block(
+  width: 100%,
+  inset: 1em,
+  stroke: 1pt,
+  breakable: true,
+  content+v(1em)
+)
 }
